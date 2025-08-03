@@ -8,12 +8,10 @@
 
 A tool built for Swift developers who want better insights into their package structure using AI.
 
-**`swift_pkg_consultant`** uses a local LLM (e.g. `llama3` via [Ollama](https://ollama.ai)) to analyze your `Package.swift` and provide:
+**`swift_pkg_consultant`** uses a local LLM to analyze your `Package.swift` and provide:
 
 - SwiftPM best practice recommendations
 - A SwiftPM Health Score out of 100
-- Clean, terminal-friendly output (powered by `rich`)
-
 
 ---
 
