@@ -32,21 +32,50 @@ As a developer, I often need quick insights into the health and structure of my 
 - Devs publishing reusable modules
 - Teams auditing internal Swift packages
 
-## Installation
+## Prerequisites
 
+Requires:
+- Python 3.9+.
+- [Ollama](https://ollama.ai) installed and running.
+- A downloaded model like `llama3`.
+
+### Start a LLM
+```bash
+
+ollama run llama3 # you can also use 'mistral'
+```
+
+### Install required libraries
 ```bash
 git clone https://github.com/mujasoft/swift_pkg_consultant.git
 cd swift_pkg_consultant
 pip3 install -r requirements.txt
 ```
 
-Requires:
-- Python 3.9+.
-- [Ollama](https://ollama.ai) installed and running.
-- A downloaded model like `llama3`.
 ---
 
 ## Usage
+
+```bash
+❯ ./swift_pkg_consultant.py --help
+
+ Usage: swift_pkg_consultant.py [OPTIONS]
+
+ Uses LLM to review a Package.swift file.
+
+
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --package             -p      TEXT  Mandatory. Location of where the packaged is located. [default: None]                                   │
+│ --output              -o      TEXT  Location of where to save report in a .txt file. [default: None]                                        │
+│ --model               -m      TEXT  Name of model. [default: llama3]                                                                        │
+│ --quiet-mode          -q            Choose to suppress all output.                                                                          │
+│ --score-only          -s            Choose to only display score.                                                                           │
+│ --install-completion                Install completion for the current shell.                                                               │
+│ --show-completion                   Show completion for the current shell, to copy it or customize the installation.                        │
+│ --help                              Show this message and exit.                                                                             │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+```
 
 ### Analyze a SwiftPM package
 
