@@ -3,12 +3,14 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![LLM Powered](https://img.shields.io/badge/LLM-Ollama%20%7C%20LLaMA3-blue.svg)](https://ollama.ai)
 [![SwiftPM](https://img.shields.io/badge/SwiftPM-Inspector-informational)](https://swift.org/package-manager/)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+
 
 ---
 
 A tool built for Swift developers who want better insights into their package structure using AI.
 
-**`swift_pkg_consultant`** uses a local LLM to analyze your `Package.swift` and provide:
+It uses a local LLM to analyze your `Package.swift` and provide:
 
 - SwiftPM best practice recommendations
 - A SwiftPM Health Score out of 100
