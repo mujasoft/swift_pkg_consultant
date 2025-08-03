@@ -23,15 +23,22 @@ This is built for Swift developers who want better insights into their package s
 
 ## Why this exists?
 
-I wanted a tool that can work offline and help me improve, review and audit the quality of packages without having to
-go online.
+I wanted a local-first tool that works offline once your model is downloaded via Ollama.
+
+### Ideal for
+
+- SwiftPM library authors
+
+- Devs publishing reusable modules
+
+- Teams auditing internal Swift packages
 
 ## Installation
 
 ```bash
 git clone https://github.com/mujasoft/swift_pkg_consultant.git
 cd swift_pkg_consultant
-pip3 install -r rquirements.txt
+pip3 install -r requirements.txt
 ```
 
 Requires:
@@ -51,13 +58,13 @@ swift_pkg_consultant -p ./Package.swift # default output filename
 ### Output to file
 
 ```bash
-swift_pkg_consultant analyse -p ./Package.swift -o review.txt
+swift_pkg_consultant -p ./Package.swift -o review.txt
 ```
 
 ### Only show health score
 
 ```bash
-swift_pkg_consultant analyse -p ./Package.swift --score-only
+swift_pkg_consultant -p ./Package.swift --score-only
 ```
 
 ---
@@ -130,15 +137,10 @@ Output saved to: review.txt
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 © 2025 Mujaheed Khan
 
 ---
-
-## ✨ Built by [@mujasoft](https://github.com/mujasoft)
-
-Open to feedback, contributions, and collaboration — especially if you're working on Swift, dev tools, or AI-infra!
-
