@@ -48,8 +48,7 @@ Requires:
 ### Analyze a SwiftPM package
 
 ```bash
-swift_pkg_consultant -p ./Package.swift # default output filename
-```
+swift_pkg_consultant -p ./Package.swift
 
 ### Output to file
 
@@ -70,9 +69,9 @@ swift_pkg_consultant -p ./Package.swift --score-only
 | Flag | Description |
 |------|-------------|
 | `-p, --package` | Path to your `Package.swift` (required) |
-| `-o, --output`  | Output file path for the review (default: `review.txt`) |
+| `-o, --output`  | Output file path for the review. (optional) |
 | `-m, --model`   | LLM model to use (default: `llama3`) |
-| `-q, --quiet-mode` | Suppress terminal output |
+| `-q, --quiet-mode` | Suppress all terminal output |
 | `-s, --score-only` | Only display the SwiftPM Health Score |
 
 ---
@@ -143,6 +142,11 @@ Here are some other developer tools in the mujasoft toolbox:
 → Generates brew install-friendly formulas for your Python or CLI tools with minimal config — designed to help you ship CLI tools like a pro.
 
 ---
+
+## Caveats
+- Responses may vary across runs due to LLM non-determinism.
+- Tested only with llama3 on a MacBook Pro (M1, 16GB RAM).
+- Other models and environments have not been tested and may produce inconsistent results.
 
 ## To-do
 - Add a `rewrite` option
