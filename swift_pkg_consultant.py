@@ -56,17 +56,14 @@ def read_text(filepath):
 
 
 def is_model_available(model_name: str) -> bool:
-    """Check if specified model is available.
+    """Check if specified model is available in local Ollama."""
 
-    Args:
-        model_name (str): Name of model. E.g. 'llama3'
-
-    Returns:
-        bool: True if available. False otherwise.
-    """
-
-    models = ollama.list()["models"]
-    return any(model["name"].startswith(model_name) for model in models)
+    try:
+        models = ollama.list().get("models", [])
+        return any(m.model.startswith(model_name) for m in models)
+    except Exception as e:
+        console.print(f"[bold red]ERROR:[/] Could not connect to Ollama: {e}")
+        raise typer.Exit(code=1)
 
 
 def send_prompt_to_LLM(prompt: str, model: str = "llama3") -> str:
@@ -133,9 +130,13 @@ def analyse(
 
     validate_setup(package)
 
+    # Ensure model is ready
     if not is_model_available(model):
-        console.print(f"[bold red]ERROR: Model \"{model}\" not found.[/]")
-        sys.exit("Please ensure that your model is downloaded and running.")
+        console.print(f"[bold red]ERROR:[/] Model \"{model}\" not found "
+                      "in Ollama.")
+        console.print(f"[bold yellow]Hint:[/] Run [italic]ollama run {model}"
+                      "[/] to download and start it.")
+        raise typer.Exit(code=1)
 
     # Extract contents of package.
     package_text = read_text(package)
