@@ -28,9 +28,7 @@ I wanted a local-first tool that works offline once your model is downloaded via
 ### Ideal for
 
 - SwiftPM library authors
-
 - Devs publishing reusable modules
-
 - Teams auditing internal Swift packages
 
 ## Installation
@@ -140,7 +138,5 @@ Output saved to: review.txt
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-© 2025 Mujaheed Khan
 
 ---
