@@ -6,13 +6,14 @@
 
 ---
 
-**`swift_pkg_consultant`** is a CLI tool that uses a local LLM (e.g. `llama3` via [Ollama](https://ollama.ai)) to analyze your `Package.swift` and provide:
+A tool built for Swift developers who want better insights into their package structure using AI.
+
+**`swift_pkg_consultant`** uses a local LLM (e.g. `llama3` via [Ollama](https://ollama.ai)) to analyze your `Package.swift` and provide:
 
 - SwiftPM best practice recommendations
 - A SwiftPM Health Score out of 100
 - Clean, terminal-friendly output (powered by `rich`)
 
-Its built for Swift developers who want better insights into their package structure. 
 
 ---
 
@@ -138,9 +139,9 @@ Here are some other developer tools in the mujasoft toolbox:
 - [readme_consultant](github.com/mujasoft/readme_consultant)
 Uses local LLMs to analyze and improve your GitHub README.md files for clarity, completeness, and appeal.
 - [gif4docs](github.com/mujasoft/gif4docs)
-A CLI tool for recording screen regions and converting them to optimized GIFs — perfect for README demos and documentation.
+A CLI tool for converting videos to optimized GIFs which are perfect for README demos and documentation.
 - [brewgen](github.com/mujasoft/brewgen)
-Generates brew install-friendly formulas for your Python or CLI tools with minimal config — designed to help you ship CLI tools like a pro.
+Generates brew install-friendly formulas for your Python or CLI tools with minimal config which are designed to help you ship CLI tools like a pro.
 
 ---
 
