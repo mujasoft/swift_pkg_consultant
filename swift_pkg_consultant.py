@@ -34,8 +34,7 @@ from rich.panel import Panel
 
 
 app = typer.Typer(
-    help="AI powered tool to review and enhance READMEs for better"
-         " communication."
+    help="AI powered tool to review swift package info"
 )
 
 console = Console()
@@ -61,6 +60,9 @@ def is_model_available(model_name: str) -> bool:
     try:
         models = ollama.list().get("models", [])
         return any(m.model.startswith(model_name) for m in models)
+
+    # Catch alls are not usually the way to go but its better to fail
+    # early.
     except Exception as e:
         console.print(f"[bold red]ERROR:[/] Could not connect to Ollama: {e}")
         raise typer.Exit(code=1)
@@ -111,22 +113,23 @@ def analyse(
     package: str = typer.Option(None, "--package", "-p",
                                 help="Mandatory. Location of where the "
                                      "packaged is located."),
-    output: str = typer.Option("review.txt", "--output", "-o",
-                               help="Location of where to save"
-                                    " formula file."),
-    model: str = typer.Option("llama3", "--model", "-m", 
+    output: str = typer.Option(None, "--output", "-o",
+                               help="Location of where to save "
+                                    "report in a .txt file."),
+    model: str = typer.Option("llama3", "--model", "-m",
                               help="Name of model."),
     enable_quiet_mode: bool = typer.Option(False, "--quiet-mode", "-q",
                                            help="Choose to suppress all"
                                                 " output."),
     score_only: bool = typer.Option(False, "--score-only", "-s",
-                                           help="Choose to suppress output to"
-                                                " terminal."),
+                                    help="Choose to only display score."),
                              ):
     """Uses LLM to review a Package.swift file."""
 
-    if not output.endswith(".txt"):
-        output += ".txt"
+    # Not always needed to save output.
+    if output is not None:
+        if not output.endswith(".txt"):
+            output += ".txt"
 
     validate_setup(package)
 
@@ -142,7 +145,7 @@ def analyse(
     package_text = read_text(package)
 
     prompt = f"""
-You are a senior Apple tools engineer with deep expertise in Swift Package 
+You are a senior Apple tools engineer with deep expertise in Swift Package
 Manager (SwiftPM). You’ve been asked to review a Swift package configuration
 for structure, clarity, and best practices.
 
@@ -173,11 +176,16 @@ Now, provide your analysis.
 
     if not enable_quiet_mode:
 
+        # Sometimes the format is not the same so the regex may need updates
+        # down the line.
         if score_only:
-            match = re.search(r'SwiftPM Health Score:\s*(\d+/\d+)', results)
+            match = re.search(r'\*?\*?SwiftPM Health Score:\*?\*?\s*(\d+/\d+)', results)
             if match:
-                print(f"{match.group(0)}")
+                score_str = match.group(0)
+                score_str = score_str.replace("*", "")
+                print(score_str)
             else:
+                print(results)
                 print("[bold red]Could not find health score in output.[/]")
             raise typer.Exit()
         else:
@@ -192,8 +200,9 @@ Now, provide your analysis.
                     )
 
     # Start writing results to file.
-    with open(output, 'w') as f:
-        f.write(results)
+    if output is not None:
+        with open(output, 'w') as f:
+            f.write(results)
 
     if not enable_quiet_mode:
         print()

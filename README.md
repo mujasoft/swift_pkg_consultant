@@ -18,7 +18,7 @@ This is built for Swift developers who want better insights into their package s
 
 ## Demo
 
-![Demo](./demo.gif)  
+![Demo](./Demo.gif)  
 ---
 
 ## Why this exists?
