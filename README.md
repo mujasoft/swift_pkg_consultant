@@ -14,6 +14,7 @@ It uses a local LLM to analyze your `Package.swift` and provide:
 
 - SwiftPM best practice recommendations
 - A SwiftPM Health Score out of 100
+- Suggestions
 
 ---
 
@@ -51,6 +52,7 @@ Requires:
 
 ```bash
 swift_pkg_consultant -p ./Package.swift
+```
 
 ### Output to file
 
