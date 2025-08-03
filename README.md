@@ -12,7 +12,7 @@
 - A SwiftPM Health Score out of 100
 - Clean, terminal-friendly output (powered by `rich`)
 
-This is built for Swift developers who want better insights into their package structure. 
+Its built for Swift developers who want better insights into their package structure. 
 
 ---
 
@@ -21,9 +21,7 @@ This is built for Swift developers who want better insights into their package s
 ![Demo](./Demo.gif)  
 ---
 
-## Why this exists?
-
-I wanted a local-first tool that works offline once your model is downloaded via Ollama.
+As a developer, I often need quick insights into the health and structure of my Swift packages. I prefer local, offline-first tools with a special preference for ones I can integrate easily into CI pipelines like Jenkins. This project was built to make it simple to review and share SwiftPM feedback with teammates, without relying on cloud-based LLMs.
 
 ### Ideal for
 
@@ -134,6 +132,21 @@ Output saved to: review.txt
 ```
 
 ---
+## Related Projects
+Here are some other developer tools in the mujasoft toolbox:
+
+[readme_consultant](github.com/mujasoft/readme_consultant)
+→ Uses local LLMs to analyze and improve your GitHub README.md files for clarity, completeness, and appeal.
+[gif4docs](github.com/mujasoft/gif4docs)
+→ A CLI tool for recording screen regions and converting them to optimized GIFs — perfect for README demos and documentation.
+[brewgen](github.com/mujasoft/brewgen)
+→ Generates brew install-friendly formulas for your Python or CLI tools with minimal config — designed to help you ship CLI tools like a pro.
+
+---
+
+## To-do
+- Add a `rewrite` option
+- Add a `dump-to-json` option
 
 ## License
 
