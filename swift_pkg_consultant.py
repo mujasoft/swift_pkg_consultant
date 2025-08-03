@@ -134,8 +134,8 @@ def analyse(
     validate_setup(package)
 
     if not is_model_available(model):
-        sys.exit(f"Your \"{model}\" is not available. Please ensure it "
-                 "is downloaded and running.")
+        console.print(f"[bold red]ERROR: Model \"{model}\" not found.[/]")
+        sys.exit("Please ensure that your model is downloaded and running.")
 
     # Extract contents of package.
     package_text = read_text(package)
