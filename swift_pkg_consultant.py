@@ -55,6 +55,20 @@ def read_text(filepath):
         return f.read()
 
 
+def is_model_available(model_name: str) -> bool:
+    """Check if specified model is available.
+
+    Args:
+        model_name (str): Name of model. E.g. 'llama3'
+
+    Returns:
+        bool: True if available. False otherwise.
+    """
+
+    models = ollama.list()["models"]
+    return any(model["name"].startswith(model_name) for model in models)
+
+
 def send_prompt_to_LLM(prompt: str, model: str = "llama3") -> str:
     """Sends prompt to specified LLM and returns output.
 
@@ -66,7 +80,7 @@ def send_prompt_to_LLM(prompt: str, model: str = "llama3") -> str:
         str: response from LLM.
     """
 
-    with console.status("[bold green]Analyzing your swift package with LLM...[/]"):
+    with console.status("[bold green]Analyzing your swift package ...[/]"):
         response = ollama.chat(
             model=model,
             messages=[
@@ -106,8 +120,8 @@ def analyse(
     model: str = typer.Option("llama3", "--model", "-m", 
                               help="Name of model."),
     enable_quiet_mode: bool = typer.Option(False, "--quiet-mode", "-q",
-                                           help="Choose to suppress output to"
-                                                " terminal."),
+                                           help="Choose to suppress all"
+                                                " output."),
     score_only: bool = typer.Option(False, "--score-only", "-s",
                                            help="Choose to suppress output to"
                                                 " terminal."),
@@ -118,6 +132,10 @@ def analyse(
         output += ".txt"
 
     validate_setup(package)
+
+    if not is_model_available(model):
+        sys.exit(f"Your \"{model}\" is not available. Please ensure it "
+                 "is downloaded and running.")
 
     # Extract contents of package.
     package_text = read_text(package)
@@ -176,12 +194,13 @@ Now, provide your analysis.
     with open(output, 'w') as f:
         f.write(results)
 
-    print()
-    console.print("[bold yellow]WARNING: Please double-check since LLMs"
-                  " can still make mistakes.[/]")
+    if not enable_quiet_mode:
+        print()
+        console.print("[bold yellow]WARNING: Please double-check since LLMs"
+                      " can still make mistakes.[/]")
 
-    print()
-    console.print(f"[bold cyan]Output saved to:[/] {output}")
+        print()
+        console.print(f"[bold cyan]Output saved to:[/] {output}")
 
 
 if __name__ == "__main__":
