@@ -77,7 +77,7 @@ swift_pkg_consultant -p ./Package.swift --score-only
 
 ---
 
-## 📦 Example Output
+## Example Output
 
 ```bash
 ╭────────────────────────────────────────────────────────────────────────── Review Made for "tests/example_swift_package/Package.swift" ───────────────────────────────────────────────────────────────────────────╮
@@ -135,12 +135,12 @@ Output saved to: review.txt
 ## Related Projects
 Here are some other developer tools in the mujasoft toolbox:
 
-[readme_consultant](github.com/mujasoft/readme_consultant)
-→ Uses local LLMs to analyze and improve your GitHub README.md files for clarity, completeness, and appeal.
-[gif4docs](github.com/mujasoft/gif4docs)
-→ A CLI tool for recording screen regions and converting them to optimized GIFs — perfect for README demos and documentation.
-[brewgen](github.com/mujasoft/brewgen)
-→ Generates brew install-friendly formulas for your Python or CLI tools with minimal config — designed to help you ship CLI tools like a pro.
+- [readme_consultant](github.com/mujasoft/readme_consultant)
+Uses local LLMs to analyze and improve your GitHub README.md files for clarity, completeness, and appeal.
+- [gif4docs](github.com/mujasoft/gif4docs)
+A CLI tool for recording screen regions and converting them to optimized GIFs — perfect for README demos and documentation.
+- [brewgen](github.com/mujasoft/brewgen)
+Generates brew install-friendly formulas for your Python or CLI tools with minimal config — designed to help you ship CLI tools like a pro.
 
 ---
 
@@ -152,6 +152,7 @@ Here are some other developer tools in the mujasoft toolbox:
 ## To-do
 - Add a `rewrite` option
 - Add a `dump-to-json` option
+- Add some automated tests with pytest
 
 ## License
 
