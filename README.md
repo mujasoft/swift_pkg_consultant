@@ -134,11 +134,11 @@ Output saved to: review.txt
 ## Related Projects
 Here are some other developer tools in the mujasoft toolbox:
 
-- [readme_consultant](github.com/mujasoft/readme_consultant)
+- [readme_consultant](https://github.com/mujasoft/readme_consultant)
 Uses local LLMs to analyze and improve your GitHub README.md files for clarity, completeness, and appeal.
-- [gif4docs](github.com/mujasoft/gif4docs)
+- [gif4docs](https://github.com/mujasoft/gif4docs)
 A CLI tool for converting videos to optimized GIFs which are perfect for README demos and documentation.
-- [brewgen](github.com/mujasoft/brewgen)
+- [brewgen](https://github.com/mujasoft/brewgen)
 Generates brew install-friendly formulas for your Python or CLI tools with minimal config which are designed to help you ship CLI tools like a pro.
 
 ---
