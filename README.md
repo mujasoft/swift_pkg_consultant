@@ -21,6 +21,7 @@ Its built for Swift developers who want better insights into their package struc
 ![Demo](./Demo.gif)  
 ---
 
+## Why this exists?
 As a developer, I often need quick insights into the health and structure of my Swift packages. I prefer local, offline-first tools with a special preference for ones I can integrate easily into CI pipelines like Jenkins. This project was built to make it simple to review and share SwiftPM feedback with teammates, without relying on cloud-based LLMs.
 
 ### Ideal for
