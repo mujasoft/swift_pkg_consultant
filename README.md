@@ -9,34 +9,35 @@
 **`swift_pkg_consultant`** is a CLI tool that uses a local LLM (e.g. `llama3` via [Ollama](https://ollama.ai)) to analyze your `Package.swift` and provide:
 
 - SwiftPM best practice recommendations
-- AI-enhanced modularity + metadata suggestions
 - A SwiftPM Health Score out of 100
 - Clean, terminal-friendly output (powered by `rich`)
 
-This is built for Swift developers who want better insights into their package structure — fast, local, and human-readable.
+This is built for Swift developers who want better insights into their package structure. 
 
 ---
 
 ## Demo
 
-> _Terminal output from a real Swift package analysis:_
-
 ![Demo](./demo.gif)  
 ---
+
+## Why this exists?
+
+I wanted a tool that can work offline and help me improve, review and audit the quality of packages without having to
+go online.
 
 ## Installation
 
 ```bash
 git clone https://github.com/mujasoft/swift_pkg_consultant.git
 cd swift_pkg_consultant
-pip install .
+pip3 install -r rquirements.txt
 ```
 
 Requires:
-- Python 3.9+
-- [Ollama](https://ollama.ai) installed and running (`ollama serve`)
-- A downloaded model like `llama3` or `codellama` (`ollama run llama3`)
-
+- Python 3.9+.
+- [Ollama](https://ollama.ai) installed and running.
+- A downloaded model like `llama3`.
 ---
 
 ## Usage
@@ -44,7 +45,7 @@ Requires:
 ### Analyze a SwiftPM package
 
 ```bash
-swift_pkg_consultant analyse -p ./Package.swift
+swift_pkg_consultant -p ./Package.swift # default output filename
 ```
 
 ### Output to file
