@@ -185,7 +185,7 @@ Generates brew install-friendly formulas for your Python or CLI tools with minim
 - Add a `rewrite` option
 - Add a `dump-to-json` option
 
-## How to test 
+## Automated testing 
 
 This tool comes with automated testing via pytest. 
 
