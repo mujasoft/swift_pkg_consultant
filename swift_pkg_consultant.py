@@ -112,7 +112,7 @@ def validate_setup(package):
 def analyse(
     package: str = typer.Option(None, "--package", "-p",
                                 help="Mandatory. Location of where the "
-                                     "packaged is located."),
+                                     "package is located."),
     output: str = typer.Option(None, "--output", "-o",
                                help="Location of where to save "
                                     "report in a .txt file."),

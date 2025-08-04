@@ -65,7 +65,7 @@ pip3 install -r requirements.txt
 
 
 ╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --package             -p      TEXT  Mandatory. Location of where the packaged is located. [default: None]                                   │
+│ --package             -p      TEXT  Mandatory. Location of where the package is located. [default: None]                                   │
 │ --output              -o      TEXT  Location of where to save report in a .txt file. [default: None]                                        │
 │ --model               -m      TEXT  Name of model. [default: llama3]                                                                        │
 │ --quiet-mode          -q            Choose to suppress all output.                                                                          │
@@ -193,7 +193,7 @@ This tool comes with automated testing via pytest.
 ```bash
 cd $my_REPO # run from root of repo not from 'tests'
 pytest -v
-```
+```fpa
 
 ### Example output
 ```bash
