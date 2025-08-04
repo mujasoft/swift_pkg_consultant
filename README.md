@@ -184,7 +184,25 @@ Generates brew install-friendly formulas for your Python or CLI tools with minim
 ## To-do
 - Add a `rewrite` option
 - Add a `dump-to-json` option
-- Add some automated tests with pytest
+
+## How to test 
+
+This tool comes with automated testing via pytest. 
+
+### Procedure
+```bash
+cd $my_REPO # run from root of repo not from 'tests'
+pytest -v
+```
+
+### Example output
+```bash
+plugins: anyio-4.9.0, html-4.1.1, metadata-3.1.1, rich-0.2.0
+collected 2 items
+
+tests/test_swift_pkg_consultant.py::test_output_file PASSED                                                                        [ 50%]
+tests/test_swift_pkg_consultant.py::test_analyse PASSED                                                                            [100%]
+```
 
 ## License
 
