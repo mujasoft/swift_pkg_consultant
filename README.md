@@ -193,7 +193,7 @@ This tool comes with automated testing via pytest.
 ```bash
 cd $my_REPO # run from root of repo not from 'tests'
 pytest -v
-```fpa
+```
 
 ### Example output
 ```bash
