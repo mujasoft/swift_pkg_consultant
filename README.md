@@ -4,7 +4,7 @@
 [![LLM Powered](https://img.shields.io/badge/LLM-Ollama%20%7C%20LLaMA3-blue.svg)](https://ollama.ai)
 [![SwiftPM](https://img.shields.io/badge/SwiftPM-Inspector-informational)](https://swift.org/package-manager/)
 [![Python](https://img.shields.io/badge/Python-3.9+-orange.svg)](https://www.python.org/)
-[![CI](https://img.shields.io/github/actions/workflow/status/mujasoft/swift_pkg_consultant/ci.yml)]
+[![CI]()]
 [![Demo Ready](https://img.shields.io/badge/Demo-Ready-success.svg)](./Demo.gif)
 ---
 
